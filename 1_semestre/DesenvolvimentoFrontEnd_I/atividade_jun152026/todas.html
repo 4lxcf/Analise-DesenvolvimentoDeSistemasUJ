@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>TODAS AS OPERAÇÕES BÁSICAS</h1>
+        <input id="valor1" placeholder="Valores entre 0~100">
+        <input id="valor2" placeholder="Valores entre 0~100">
+        <br>
+        <button id="btn">Calcule!</button>
+
+        <p id="soma">SOMA</p>
+        <p id="subtracao">SUBTRAÇÃO</p>
+        <p id="multiplicacao">MULTIPLICAÇÃO</p>
+        <p id="divisao">DIVISÃO</p>
+        <p id="potencia">POTÊNCIA</p>
+        <p id="media">MÉDIA</p>
+
+        <script>
+            document.getElementById("btn").addEventListener("click", function(){
+                const v1 = Number(document.getElementById("valor1").value);
+                const v2 = Number(document.getElementById("valor2").value);
+
+                if(isNaN(v1) || isNaN(v2)){
+                    alert("Digite apenas números!");
+                    return;
+                }
+
+                if (v1 > 100 || v2 > 100 || v1 < 0 || v2 < 0) {
+                    alert("Valores incorretos! Digite apenas numeros entre 0 e 100.");
+                    return;
+                }
+
+                if (v2 === 0) {
+                    alert("Impossível dividir por 0. Digite outro valor para o segundo número.");
+                    return;
+                }
+
+                document.querySelectorAll('p').forEach(p => p.style.display = 'block');
+
+                document.getElementById("soma").innerHTML = "SOMA: <br>" + (v1 + v2); 
+                document.getElementById("subtracao").innerHTML = "SUBTRAÇÃO: <br>" + (v1 - v2); 
+                document.getElementById("multiplicacao").innerHTML = "MULTIPLICAÇÃO: <br>" + (v1 * v2); 
+                document.getElementById("divisao").innerHTML = "DIVISÃO: <br>" + (v1 / v2); 
+                document.getElementById("potencia").innerHTML = "POTÊNCIA: <br>" + (v1 ** v2);
+                document.getElementById("media").innerHTML = "MÉDIA: <br>" + ((v1 + v2) / 2);
+
+                if ((v1 + v2) / 2 >= 90) {
+                    document.getElementById("media").innerHTML += " => EXCELENTE!";
+                } else if ((v1 + v2) / 2 >= 70) {
+                    document.getElementById("media").innerHTML += " => BOM!";
+                } else if ((v1 + v2) / 2 >= 50) {
+                    document.getElementById("media").innerHTML += " => REGULAR!";
+                } else {
+                    document.getElementById("media").innerHTML += " => REPROVADO!";
+                }
+            })
+        </script>
+    </body>
+</html>
