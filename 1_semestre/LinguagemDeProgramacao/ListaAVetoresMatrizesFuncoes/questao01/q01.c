@@ -8,10 +8,6 @@ int main()
     {
         printf("Digite um numero inteiro: \n");
         scanf(" %d", &vec[i]);
-    }
-    
-    for (int i = 0; i < 10; i++)
-    {
         result += vec[i];
     }
     
