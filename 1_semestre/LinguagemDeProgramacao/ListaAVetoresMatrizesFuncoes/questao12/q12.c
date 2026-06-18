@@ -16,8 +16,7 @@ int main(){
 			printf("| %.2f ", matrix[i][j]);
 			soma += matrix[i][j];
 		}
-		printf("| Soma da Linha %d: %.2f\n", i, soma
-		);
+		printf("| Soma da Linha %d: %.2f\n", i, soma);
 	}
 	
 	return 0;
