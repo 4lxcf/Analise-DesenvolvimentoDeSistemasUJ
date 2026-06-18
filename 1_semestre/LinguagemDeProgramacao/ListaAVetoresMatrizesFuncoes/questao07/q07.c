@@ -8,13 +8,10 @@ int main()
     {
         printf("Digite um numero inteiro: \n");
         scanf(" %d", &vec[i]);
-        
-        
+               
 		if(vec[i] >= maior){
         	maior = vec[i];
 		}
-		
-		printf("O MAIOR ATE AGORA = %d\n", maior);
     }
     
     printf("O maior valor digitado foi: %d", maior);

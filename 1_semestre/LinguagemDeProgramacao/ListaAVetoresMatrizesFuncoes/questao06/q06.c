@@ -2,7 +2,7 @@
 
 int main()
 {
-    int vec[10], result;
+    int vec[10], result=0;
 
     for (int i = 0; i < 10; i++)
     {
