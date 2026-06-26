@@ -17,45 +17,73 @@
         <p id="divisao">DIVISÃO</p>
         <p id="potencia">POTÊNCIA</p>
         <p id="media">MÉDIA</p>
+        <p id="comparacao">COMPARAÇÃO</p>
+        <p id="paridade">PARIDADE</p>
 
         <script>
-            document.getElementById("btn").addEventListener("click", function(){
+            let comparacao;
+            let paridade;
+        
+            function pegarNumeros(){
                 const v1 = Number(document.getElementById("valor1").value);
                 const v2 = Number(document.getElementById("valor2").value);
+                return { v1, v2 };
+            }
 
+            function validar(v1, v2){
                 if(isNaN(v1) || isNaN(v2)){
                     alert("Digite apenas números!");
-                    return;
+                    return false;
                 }
+                return true;
+            }
+
+            document.getElementById("btn").addEventListener("click", function(){
+                const { v1, v2 } = pegarNumeros();
+
+                if (!validar(v1, v2)) return;
 
                 if (v1 > 100 || v2 > 100 || v1 < 0 || v2 < 0) {
                     alert("Valores incorretos! Digite apenas numeros entre 0 e 100.");
                     return;
                 }
-
-                if (v2 === 0) {
-                    alert("Impossível dividir por 0. Digite outro valor para o segundo número.");
-                    return;
-                }
-
+                
                 document.querySelectorAll('p').forEach(p => p.style.display = 'block');
-
-                document.getElementById("soma").innerHTML = "SOMA: <br>" + (v1 + v2); 
-                document.getElementById("subtracao").innerHTML = "SUBTRAÇÃO: <br>" + (v1 - v2); 
-                document.getElementById("multiplicacao").innerHTML = "MULTIPLICAÇÃO: <br>" + (v1 * v2); 
-                document.getElementById("divisao").innerHTML = "DIVISÃO: <br>" + (v1 / v2); 
+                
+                document.getElementById("soma").innerHTML = "SOMA: <br>" + (v1 + v2);
+                document.getElementById("subtracao").innerHTML = "SUBTRAÇÃO: <br>" + (v1 - v2);
+                document.getElementById("multiplicacao").innerHTML = "MULTIPLICAÇÃO: <br>" + (v1 * v2);
+                if (v2 === 0) {
+                    document.getElementById("divisao").innerHTML = "DIVISÃO: <br>Erro — não divide por zero!";
+                    document.getElementById("divisao").className = "erro";
+                } else {
+                    document.getElementById("divisao").innerHTML = "DIVISÃO: <br>" + (v1 / v2);
+                }
                 document.getElementById("potencia").innerHTML = "POTÊNCIA: <br>" + (v1 ** v2);
                 document.getElementById("media").innerHTML = "MÉDIA: <br>" + ((v1 + v2) / 2);
-
                 if ((v1 + v2) / 2 >= 90) {
-                    document.getElementById("media").innerHTML += " => EXCELENTE!";
+                    document.getElementById("media").innerHTML += " => Excelente!";
                 } else if ((v1 + v2) / 2 >= 70) {
-                    document.getElementById("media").innerHTML += " => BOM!";
+                    document.getElementById("media").innerHTML += " => Bom!";
                 } else if ((v1 + v2) / 2 >= 50) {
-                    document.getElementById("media").innerHTML += " => REGULAR!";
+                    document.getElementById("media").innerHTML += " => Regular!";
                 } else {
-                    document.getElementById("media").innerHTML += " => REPROVADO!";
+                    document.getElementById("media").innerHTML += " => Reprovado!";
                 }
+
+                if (v1 === v2) {
+                    comparacao = "Valor1 é <em>igual</em> ao Valor2.";
+                } else if (v1 > v2){
+                    comparacao = "Valor1 é <em>maior</em> que Valor2.";
+                } else {
+                    comparacao = "Valor1 é <em>menor</em> que Valor2.";
+                }
+                document.getElementById("comparacao").innerHTML = "COMPARAÇÃO: <br>" + comparacao;
+
+                (v1 % 2 === 0) ? paridade = "par" : paridade = "ímpar";
+                document.getElementById("paridade").innerHTML = "PARIDADE: <br>" + v1 + " é " + paridade;
+                (v2 % 2 === 0) ? paridade = "par" : paridade = "ímpar";
+                document.getElementById("paridade").innerHTML += " e " + v2 + " é " + paridade;
             })
         </script>
     </body>
