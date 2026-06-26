@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calculadora">
+
+    <div id="display">0</div>
+
+    <button class="btn op"     onclick="escolherOperacao('quad')">x²</button>
+    <button class="btn op"     onclick="escolherOperacao('pot')">x<sup>y</sup></button>
+    <button class="btn op"     onclick="escolherOperacao('raiz')">&#8730</button>
+    <button class="btn op"     onclick="escolherOperacao('resto')">%</button>
+
+    <button class="btn"        onclick="digitar('7')">7</button>
+    <button class="btn"        onclick="digitar('8')">8</button>
+    <button class="btn"        onclick="digitar('9')">9</button>
+    <button class="btn op"     onclick="escolherOperacao('÷')">÷</button>
+    
+    <button class="btn"        onclick="digitar('4')">4</button>
+    <button class="btn"        onclick="digitar('5')">5</button>
+    <button class="btn"        onclick="digitar('6')">6</button>
+    <button class="btn op"     onclick="escolherOperacao('×')">×</button>
+    
+    <button class="btn"        onclick="digitar('1')">1</button>
+    <button class="btn"        onclick="digitar('2')">2</button>
+    <button class="btn"        onclick="digitar('3')">3</button>
+    <button class="btn op"     onclick="escolherOperacao('−')">−</button>
+    
+    <button class="btn limpar" onclick="limpar('0')">⌫</button>
+    <button class="btn"        onclick="digitar('0')">0</button>
+    <button class="btn igual"  onclick="calcular()">=</button>
+    <button class="btn op"     onclick="escolherOperacao('+')">+</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
