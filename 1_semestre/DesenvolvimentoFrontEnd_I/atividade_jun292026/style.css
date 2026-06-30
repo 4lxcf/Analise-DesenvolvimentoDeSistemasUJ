@@ -1,0 +1,195 @@
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0F172A;
+  color: #F8FAFC;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ─── Container ─────────────────────────────────────────────── */
+.container {
+  background: #1E293B;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #F8FAFC;
+  margin-bottom: 0.3rem;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #94A3B8;
+  margin-bottom: 2rem;
+}
+
+/* ─── Campo (label + input + mensagem) ──────────────────────── */
+.campo {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94A3B8;
+  margin-bottom: 0.4rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #0F172A;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  color: #F8FAFC;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+input::placeholder {
+  color: #475569;
+}
+
+input:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* ─── Estados de validação ──────────────────────────────────── */
+input.valido {
+  border-color: #4ADE80;
+}
+
+input.valido:focus {
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15);
+}
+
+input.invalido {
+  border-color: #F87171;
+}
+
+input.invalido:focus {
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15);
+}
+
+/* ─── Mensagens de erro ─────────────────────────────────────── */
+.erro {
+  display: block;
+  font-size: 0.78rem;
+  color: #F87171;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+}
+
+/* ─── Contador de caracteres ────────────────────────────────── */
+.contador {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-top: 0.25rem;
+  text-align: right;
+  transition: color 0.25s;
+}
+
+.contador.ok {
+  color: #4ADE80;
+}
+
+/* ─── Botão de envio ─────────────────────────────────────────── */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.85rem;
+  background: #2965F1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* ─── Painel de sucesso ─────────────────────────────────────── */
+.sucesso {
+  display: none;          /* oculto por padrão */
+  text-align: center;
+  padding: 1.5rem 0;
+  animation: aparecer 0.4s ease;
+}
+
+.sucesso.visivel {
+  display: block;
+}
+
+.icone-sucesso {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.sucesso h2 {
+  font-size: 1.5rem;
+  color: #4ADE80;
+  margin-bottom: 0.5rem;
+}
+
+.sucesso p {
+  color: #94A3B8;
+  margin-bottom: 0.3rem;
+}
+
+.sucesso strong {
+  color: #F8FAFC;
+}
+
+.email-confirmado {
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.sucesso button {
+  padding: 0.7rem 1.5rem;
+  background: #334155;
+  color: #F8FAFC;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: auto;
+  transition: background 0.2s;
+}
+
+.sucesso button:hover {
+  background: #475569;
+}
+
+/* ─── Animação de entrada ────────────────────────────────────── */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
