@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Criar Conta</h1>
+    <p class="subtitulo">Preencha os campos abaixo para se cadastrar</p>
+
+    <form id="formCadastro" novalidate>
+
+      <!-- Nome -->
+      <div class="campo">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" placeholder="Ex: João Silva" />
+        <span class="erro" id="erroNome"></span>
+      </div>
+
+      <!-- Cpf -->
+      <div class="campo">
+        <label for="cpf">CPF</label>
+        <input type="number" id="cpf" placeholder="Ex: 000.000.000-00" />
+        <span class="erro" id="erroCpf"></span>
+      </div>
+      
+      <!-- Telefone -->
+      <div class="campo">
+        <label for="telefone">Telefone</label>
+        <input type="number" id="telefone" placeholder="Ex: 00 00000-0000" />
+        <span class="erro" id="erroTelefone"></span>
+      </div>
+
+      <!-- E-mail -->
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="Ex: joao@email.com" />
+        <span class="erro" id="erroEmail"></span>
+      </div>
+
+      <!-- Senha -->
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Mínimo 6 caracteres" />
+        <span class="erro" id="erroSenha"></span>
+        <span class="contador" id="contadorSenha">0 / 6 caracteres</span>
+      </div>
+
+      <!-- Confirmar Senha -->
+      <div class="campo">
+        <label for="confirmar">Confirmar senha</label>
+        <input type="password" id="confirmar" placeholder="Repita a senha" />
+        <span class="erro" id="erroConfirmar"></span>
+      </div>
+
+      <button type="submit">Cadastrar →</button>
+
+    </form>
+
+    <!-- Painel de sucesso (oculto até o envio) -->
+    <div class="sucesso" id="painelSucesso">
+      <div class="icone-sucesso">✅</div>
+      <h2>Cadastro realizado!</h2>
+      <p>Bem-vindo, <strong id="nomeUsuario"></strong></p>
+      <p class="email-confirmado" id="emailUsuario"></p>
+      <button onclick="reiniciar()">Fazer novo cadastro</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
