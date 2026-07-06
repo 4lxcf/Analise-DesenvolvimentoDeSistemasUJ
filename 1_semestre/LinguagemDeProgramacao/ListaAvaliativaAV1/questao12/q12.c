@@ -50,9 +50,9 @@ int main(){
         printf("Quantidade invalida!\n");
         return 1;
     }
-
+    
+    //Alocacao de memoria variavel
     int *vet = malloc(qtd * sizeof(int));
-
     if (vet == NULL){
         printf("Erro ao alocar memoria!\n");
         return 1;
@@ -74,6 +74,8 @@ int main(){
         }
     }
     printf(" ]\n");
+
+    free(vet);
 
     ordenar(vet, qtd);
 
