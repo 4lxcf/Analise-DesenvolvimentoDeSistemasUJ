@@ -1,0 +1,144 @@
+:root{
+  font-family: "Montserrat", sans-serif;
+  --size-h1: 32px;
+  --size-h2: 24px;
+  --size-normal: 16px;
+  --normal-weight: 400;
+  --bold-weight: 900;
+  --primary-color: white;
+  --second-color: #3B3355;
+  --third-color: #F4C95D;
+}
+
+body{
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    font-size: var(--size-normal);
+    color: var(--second-color);
+}
+
+header{
+    background-color: var(--second-color);
+    color: var(--primary-color);
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+#profile{
+    display: flex;
+    height: 200px;
+}
+
+.title{
+    color: var(--primary-color);
+}
+
+#profile-text{
+    align-content: center;
+    margin-left: 25px;
+}
+
+img{
+    border-radius: 15px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: var(--third-color) 2px solid;
+    padding: 30px;
+}
+
+a{
+    font-weight: var(--normal-weight);
+    text-decoration: none;
+    color: var(--third-color);
+    width: 95px;
+}
+
+a:hover{
+    font-weight: var(--bold-weight);
+    color: var(--third-color);
+}
+
+main{
+    padding: 20px;
+    line-height: 30px;
+}
+
+section{
+    justify-items: center;
+    margin: 50px 0px;
+    padding: 25px;
+}
+
+h1{
+    font-size: var(--size-h1);
+}
+
+h2{
+    font-size: var(--size-h2);
+    text-align: center;
+    color: var(--second-color);
+    margin-bottom: 50px;
+}
+
+p{
+    text-align: justify;
+    padding: 0px 120px;
+}
+
+.one{
+    color: var(--third-color);
+}
+
+.two{
+    font-size: var(--size-h2);
+}
+
+.three{
+    font-weight: 900;
+}
+
+.four{
+    text-decoration-line: underline;
+}
+
+.five{
+    text-transform: uppercase;
+}
+
+.six{
+    text-shadow: 2px 2px 4px var(--second-color);
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead{
+    background-color: var(--second-color);
+    color: var(--primary-color);
+}
+
+th, td{
+    border: var(--second-color) 2px solid;
+    padding: 8px;
+}
+
+.contato{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    border: var(--third-color) 2px solid;
+}
+
+.rodape{
+    text-align: center;
+}
