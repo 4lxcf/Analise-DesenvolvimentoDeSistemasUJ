@@ -30,6 +30,8 @@ int main()
     }
     else
     {
-        printf("Impossivel dividir por 0.\n");
+        printf("DIVISAO: Impossivel dividir por 0.\n");
     }
+
+    return 0;
 }
